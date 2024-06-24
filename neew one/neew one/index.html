@@ -1,0 +1,32 @@
+<html>
+    <script>
+        function populateDiv(){
+            const a=document.getElementById("first number").value;
+            const b=document.getElementById("second number").value;
+            const element=document.getElementById("finalsum")
+            fetch("https://sum-server.100xdevs.com/sum?a" + a + "&b="+ b)
+              .then (function(response) {
+                console.log(response)
+                response.text()
+                .then(function(ans){
+                    console.log(ans);
+                })
+            });
+
+        }
+    </script>
+    <input id ="first number"type="text" placeholder="first number"></input> <br></br>
+    <input  id ="second number"type="text" placeholder="second number"></input> <br></br>
+    <button onclick="populateDiv()">calculate sum</button> <br></br>
+    <div id="finalsum"></div>
+
+        
+    <body>
+        
+
+    </body>
+</html>
+
+
+
+    
